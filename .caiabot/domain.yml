@@ -1,0 +1,91 @@
+intents:
+  - greet
+  - goodbye
+  - info_IL
+  - info_out_of_state
+  - search_bus
+  - search_flight
+  - affirm
+  - deny
+  - out_of_scope
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - query_valid_transport
+  - ask_weather
+
+entities:
+  - veh_bus
+  - location
+  - location2
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_sad
+- utter_ask_location
+- utter_assure_valid_transport
+- action_bus_search
+- action_get_weather
+- action_default_fallback
+
+forms:
+- weather_form
+
+slots:
+  location:
+    type: text
+  location2:
+    type: unfeaturized
+  veh_bus:
+    type: text  
+  loc_address:
+    type: unfeaturized  
+  user_name:
+    type: unfeaturized
+  
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Wishing you a very good morning"
+  - text: "Hows it going"
+
+  utter_cheer_up:
+  - text: "Dont worry be happy"
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Was I helpful??"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Fantastic, have a great day!"
+  - text: "Thank you!"
+
+  utter_sad:
+  - text: "Im sorry to hear that"
+  - text: "Is there anything else I can do for you"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you later"
+  - text: "Have a goodday"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  - text: "BOT CAIA- Built by Benito at your service"
+
+  utter_ask_location:
+  - text: "What is your destination?"
+  - text: "Where would you want to go?"
+
+  utter_assure_valid_transport:
+  - text: "Yes you will reach {loc_address}"
+  - text: "Affirmative. Destination: {loc_address}"

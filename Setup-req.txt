@@ -1,0 +1,55 @@
+WELCOME TO PROJECT CAIA
+
+
+1. Install python 3.6 or 3.7 max. Tensorflow currently has some issue with python 3.8
+
+2. Setup necessary virtualenv 
+Point to the python 3.6 or 3.7 executable for the virtualenv
+
+virtualenv --system-site-packages -p C:\Users\13129\AppData\Local\Programs\Python\Python37\python.exe ./venv-project-caia
+
+3. Now install rasa packages.
+
+rasa init
+
+
+Process:
+
+-Conversation design
+most frequent conversation patterns.
+
+-define the intents, provide some examples of how the users may say that specific thing
+and label the entities
+
+- configure pipelines 
+you can use preconfigured pipelines with less training data. 
+it will provide faster model but more generic data as compared to domain specific data
+
+the pipelines are just shortcut for full components which are responsible for diff processing steps. Understand the steps
+-> SpacyNLP
+-> SpacyTokenizer
+-> SpacyFeaturizer
+-> RegexFeaturizer
+-> CRFEntityExtractor
+-> EntitySynonymMapper
+-> SklearnIntentClassifier
+
+- rasa train nlu ---> from config.yml
+
+
+-- handle class imbalance -> Balance Batching Strategy
+-- implement custom spell checker to handle typos in custom pipelines.
+
+4. dialogue management using machine learning. 
+
+5. setup custom actions
+
+6. slots => memory variables that can be derived from the nlu model.
+slot types= text, bool, categorical, float, list, unfeaturized
+
+
+7. important hyperparameters for dialogue management.
+max_history
+data_augmentation
+
+
